@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: </h3>
-<h3>Register Number:     </h3>
+<h3>Name: Lathika L J</h3>
+<h3>Register Number: 212223220050 </h3>
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -90,8 +90,8 @@ F H <BR>
 
 <hr>
 
-<h3>Program:</h3>
-"""
+## Program 
+```
 from collections import defaultdict
 
 def dfs(graph, node, visited, path):
@@ -103,7 +103,9 @@ def dfs(graph, node, visited, path):
             dfs(graph, neighbor, visited, path)
     return path
 
-def solve_dfs_traversal(data_lines):    
+def solve_dfs_traversal(data_lines):
+    """Parses input data and executes the DFS function."""
+    
     data_iter = iter(data_lines)
     try:
         v, e = map(int, next(data_iter).split())
@@ -160,12 +162,9 @@ sample_input_2 = [
     "0"
 ]
 print(solve_dfs_traversal(sample_input_2))
-"""
+```
+## Output
+<img width="1343" height="465" alt="image" src="https://github.com/user-attachments/assets/d11c1cae-5ba2-4615-be20-d6e3f9e4d047" />
 
-<h3>Output:</h3>
-<img width="1343" height="465" alt="image" src="https://github.com/user-attachments/assets/6965d4b1-7ec4-47b7-b928-d24af43fcc41" />
-
-<h3>Result:</h3>
-<hr>
-<p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
-
+## Result
+Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.
