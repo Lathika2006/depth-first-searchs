@@ -89,6 +89,82 @@ F H <BR>
 ['0', '1', '2', '3', '4']
 
 <hr>
+
+<h3>Program:</h3>
+```from collections import defaultdict
+
+def dfs(graph, node, visited, path):
+    
+    visited[node] = True
+    path.append(node)
+    for neighbor in sorted(graph[node]): 
+        if not visited[neighbor]:
+            dfs(graph, neighbor, visited, path)
+    return path
+
+def solve_dfs_traversal(data_lines):
+    """Parses input data and executes the DFS function."""
+    
+    data_iter = iter(data_lines)
+    try:
+        v, e = map(int, next(data_iter).split())
+    except StopIteration:
+        print("Error: Missing V and E line.")
+        return
+
+    graph = defaultdict(list)
+    for _ in range(e):
+        try:
+            u, v = next(data_iter).split()
+            graph[u].append(v)
+            graph[v].append(u)
+        except StopIteration:
+            print(f"Error: Expected {e} edges, but stopped at edge {_}.")
+            return
+        
+    try:
+        start = next(data_iter).strip()
+    except StopIteration:
+        try:
+            start = next(data_iter).strip()
+        except StopIteration:
+            print("Error: Missing start node.")
+            return
+
+    visited = defaultdict(bool)
+    path = []
+    
+    traversedpath = dfs(graph, start, visited, path)
+    return traversedpath
+
+sample_input_1 = [
+    "8 9",
+    "A B",
+    "A C",
+    "B E",
+    "C D",
+    "B D",
+    "C G",
+    "D F",
+    "G F",
+    "F H",
+    "A" 
+]
+print(solve_dfs_traversal(sample_input_1))
+sample_input_2 = [
+    "5 5",
+    "0 1",
+    "0 2",
+    "0 3",
+    "2 3",
+    "2 4",
+    "0"
+]
+print(solve_dfs_traversal(sample_input_2))```
+
+<h3>Output:</h3>
+<img width="1343" height="465" alt="image" src="https://github.com/user-attachments/assets/6965d4b1-7ec4-47b7-b928-d24af43fcc41" />
+
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
