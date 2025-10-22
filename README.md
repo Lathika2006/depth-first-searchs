@@ -91,7 +91,8 @@ F H <BR>
 <hr>
 
 <h3>Program:</h3>
-```from collections import defaultdict
+"""
+from collections import defaultdict
 
 def dfs(graph, node, visited, path):
     
@@ -102,9 +103,7 @@ def dfs(graph, node, visited, path):
             dfs(graph, neighbor, visited, path)
     return path
 
-def solve_dfs_traversal(data_lines):
-    """Parses input data and executes the DFS function."""
-    
+def solve_dfs_traversal(data_lines):    
     data_iter = iter(data_lines)
     try:
         v, e = map(int, next(data_iter).split())
@@ -160,7 +159,8 @@ sample_input_2 = [
     "2 4",
     "0"
 ]
-print(solve_dfs_traversal(sample_input_2))```
+print(solve_dfs_traversal(sample_input_2))
+"""
 
 <h3>Output:</h3>
 <img width="1343" height="465" alt="image" src="https://github.com/user-attachments/assets/6965d4b1-7ec4-47b7-b928-d24af43fcc41" />
